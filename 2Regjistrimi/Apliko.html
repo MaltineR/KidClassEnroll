@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasa e pare</title>
+    <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <script src="javascript.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navi">
+            <div class="container-fluid">
+              <div class="navbar-header head">
+                <img class="navbar-brand image" src="Mashti.svg"alt="eKosova logo" height="70" width="100">
+                <a class="navbar-brand" href="Firstpage.html">REGJISTRIMI I FEMIJEVE NE KLASE TE PARE</a>
+              </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Kyqu</a></li>
+                    <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Regjistrohu</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+        <div class="row header">
+            <div class="col-12 regjistrimi">
+               Apliko Online
+            </div>
+            <div class="col-12 aplikimi">
+                    <div class="form">
+                     <h1 class="title">
+                        <p>Per te krijuar nje aplikim te ri klikoni Aplikimi i ri </p>
+                        <a href="regjistrimi.html">
+                            <button type="button" class="btn btn-primary btn-block mb-4">Aplikimi i ri</button>
+                              </a>
+                    </h1>
+                    <body class="mt32">
+                            <h3>
+                                <h1 class="title">
+                                
+                                <p>Lista e aplikimeve tuaja ekzistuese :</p>
+                                </h1>
+                                <input type="search" placeholder="Kerko..." class="form-control search-input" data-table="customers-list"/>
+                            </h3>
+                            <table class="table table-striped mt32 customers-list">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Emri i Aplikantit</th>
+                                        <th>Emri i shkolles</th>
+                                        <th>Numri i aplikimit</th>
+                                        <th>Qyteti</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Maltine Rama</td>
+                                        <td>Elena Gjika</td>
+                                        <td>050214</td>
+                                        <td>Prishtine</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Fatlum Rama</td>
+                                        <td>Faik Konica</td>
+                                        <td>12209</td>
+                                        <td>Peje</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Ermal Luzha</td>
+                                        <td>Pavarsia</td>
+                                        <td>05021</td>
+                                        <td>Prizren</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Bjeshka Blakaj</td>
+                                        <td>Gjergj Fishta</td>
+                                        <td>WA1 1DP</td>
+                                        <td>Drenas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Mirjeta Prenaj</td>
+                                        <td>Hasan Prishtina</td>
+                                        <td>S-958 22</td>
+                                        <td>Viti</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Lis Spahiu</td>
+                                        <td>Meto Bajraktari</td>
+                                        <td>810025</td>
+                                        <td>Ferizaj</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Arbenita Musaj</td>
+                                        <td>Naim Frashëri</td>
+                                        <td>W23 458</td>
+                                        <td>Mitrovice</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Leonita Mataj</td>
+                                        <td>Pjetër Bogdani</td>
+                                        <td>T5A 0B5</td>
+                                        <td>Gjakov</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <script>
+                            (function(document) {
+                                'use strict';
+                    
+                                var TableFilter = (function(myArray) {
+                                    var search_input;
+                    
+                                    function _onInputSearch(e) {
+                                        search_input = e.target;
+                                        var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+                                        myArray.forEach.call(tables, function(table) {
+                                            myArray.forEach.call(table.tBodies, function(tbody) {
+                                                myArray.forEach.call(tbody.rows, function(row) {
+                                                    var text_content = row.textContent.toLowerCase();
+                                                    var search_val = search_input.value.toLowerCase();
+                                                    row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+                                                });
+                                            });
+                                        });
+                                    }
+                    
+                                    return {
+                                        init: function() {
+                                            var inputs = document.getElementsByClassName('search-input');
+                                            myArray.forEach.call(inputs, function(input) {
+                                                input.oninput = _onInputSearch;
+                                            });
+                                        }
+                                    };
+                                })(Array.prototype);
+                    
+                                document.addEventListener('readystatechange', function() {
+                                    if (document.readyState === 'complete') {
+                                        TableFilter.init();
+                                    }
+                                });
+                    
+                            })(document);
+                        </script>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<footer class="container-fluid">
+        <div class="footer-content">
+            <div class="item" >
+                <div class="mb-1">
+                    <img src="pen.jpg" alt="logo" width="50" height="50">
+                  
+                </div>
+                <p class="lang">Projekti u mundesua nga</p>
+                <p class="lang">Peer Educators Network - PEN</p>
+                <p class="lang">MBP qeveria e kosoves</p>
+                <p class="lang"><h6>Copyright &copy;2022 Ministria e Arsimit, Shkencës, Teknologjisë dhe Inovacionit</h6></p>
+            </div>
+        <div class="item">
+            <a class="lang">Rreth portalit</a>
+            <a class="lang">Privatesia</a>
+            <a class="lang">Web Mail</a> 
+        </div>
+    </div>
+</footer>
+
+</body> 
+</html>
